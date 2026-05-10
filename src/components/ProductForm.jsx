@@ -162,16 +162,41 @@ const ProductForm = ({ initialData = null, onSubmit, onClose, loading }) => {
           <Field icon={FiFileText} label="Description" name="description" placeholder="Describe the product..." isTextarea />
 
           {/* ── Image Preview ── */}
-          {form.imageUrl && /^https?:\/\/.+/.test(form.imageUrl) && (
-            <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 h-36 bg-slate-100 dark:bg-slate-800">
-              <img
-                src={form.imageUrl}
-                alt="Preview"
-                className="w-full h-full object-cover"
-                onError={(e) => { e.target.style.display = 'none'; }}
-              />
+          <div>
+            <p className="input-label flex items-center gap-1.5">
+              <FiImage size={13} className="text-brand-500" />
+              Image Preview
+            </p>
+            <div className="flex items-start gap-4">
+              <div
+                className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 flex-shrink-0"
+                style={{ width: 150, height: 150 }}
+              >
+                <img
+                  src={
+                    form.imageUrl && /^https?:\/\/.+/.test(form.imageUrl)
+                      ? form.imageUrl
+                      : 'https://placehold.co/150x150/e2e8f0/94a3b8?text=No+Image'
+                  }
+                  alt="Preview"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = 'https://placehold.co/150x150/e2e8f0/94a3b8?text=No+Image';
+                  }}
+                />
+              </div>
+              <div className="flex flex-col gap-1 pt-1">
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  {form.imageUrl && /^https?:\/\/.+/.test(form.imageUrl)
+                    ? '✅ Valid URL — preview loaded'
+                    : '💡 Enter a URL above to preview'}
+                </p>
+                <p className="text-xs text-slate-400 dark:text-slate-500">
+                  Recommended: square image (1:1 ratio)
+                </p>
+              </div>
             </div>
-          )}
+          </div>
 
           {/* ── Footer Buttons ── */}
           <div className="flex gap-2 pt-1">
