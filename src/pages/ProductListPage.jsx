@@ -5,7 +5,7 @@ import ProductCard from '../components/ProductCard';
 import ProductForm from '../components/ProductForm';
 import SearchBar from '../components/SearchBar';
 import Pagination from '../components/Pagination';
-import LoadingSpinner from '../components/LoadingSpinner';
+import SkeletonGrid from '../components/SkeletonGrid';
 import useProducts from '../hooks/useProducts';
 import useAuth from '../hooks/useAuth';
 
@@ -82,7 +82,7 @@ const ProductListPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -116,12 +116,8 @@ const ProductListPage = () => {
           <SearchBar onSearch={handleSearch} />
         </div>
 
-        {/* ── Loading State ── */}
-        {loading && (
-          <div className="flex justify-center items-center py-24">
-            <LoadingSpinner size="lg" text="Loading products..." />
-          </div>
-        )}
+        {/* ── Skeleton Loading ── */}
+        {loading && <SkeletonGrid count={8} />}
 
         {/* ── Error State ── */}
         {!loading && error && (

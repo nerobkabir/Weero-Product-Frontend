@@ -15,11 +15,19 @@ module.exports = {
           200: '#c7d2fe',
           300: '#a5b4fc',
           400: '#818cf8',
-          500: '#6366f1', // primary
+          500: '#6366f1',
           600: '#4f46e5',
           700: '#4338ca',
           800: '#3730a3',
           900: '#312e81',
+        },
+        dark: {
+          bg:      '#000000', // pure black page background
+          surface: '#0f0f0f', // cards
+          elevated:'#161616', // navbar, modals
+          border:  '#222222', // borders
+          input:   '#1a1a1a', // inputs
+          muted:   '#2a2a2a', // hover states
         },
       },
       animation: {

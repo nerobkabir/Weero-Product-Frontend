@@ -66,7 +66,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
       <Navbar />
 
       {/* ── Hero Section ── */}
@@ -114,7 +114,7 @@ const HomePage = () => {
           </div>
 
           {/* Stats */}
-          <div className="flex items-center justify-center gap-12 mt-16 pt-12 border-t border-slate-200 dark:border-slate-800 animate-fade-in">
+          <div className="flex items-center justify-center gap-12 mt-16 pt-12 border-t border-slate-200 dark:border-white/[0.05] animate-fade-in">
             <StatCard value="CRUD" label="Full API" />
             <StatCard value="JWT" label="Secured" />
             <StatCard value="100%" label="Responsive" />
@@ -143,7 +143,7 @@ const HomePage = () => {
       </section>
 
       {/* ── How it works ── */}
-      <section className="bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+      <section className="bg-white dark:bg-[#0a0a0a] border-y border-slate-200 dark:border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">How it works</h2>
@@ -212,7 +212,7 @@ const HomePage = () => {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 py-8">
+      <footer className="border-t border-slate-200 dark:border-white/[0.05] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 bg-brand-500 rounded-md flex items-center justify-center">
@@ -223,7 +223,7 @@ const HomePage = () => {
             </span>
           </div>
           <p className="text-xs text-slate-400 dark:text-slate-600">
-            © 2026 ProductHub. All rights reserved.
+            © 2026 Weero Digital — Built for the job task submission.
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-600">
             <Link to="/products" className="hover:text-brand-500 transition-colors">Products</Link>
